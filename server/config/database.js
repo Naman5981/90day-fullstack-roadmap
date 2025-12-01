@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
+const { MONGODB_URI } = require('./constants');
 
 const connectDB = async () => {
     try {
-        const mongoURI = process.env.MONGODB_URI;
+        const mongoURI = MONGODB_URI;
 
         console.log('🔄 Attempting to connect to MongoDB...');
         console.log('📍 Connection string:', mongoURI.replace(/\/\/.*@/, '//***:***@'));
