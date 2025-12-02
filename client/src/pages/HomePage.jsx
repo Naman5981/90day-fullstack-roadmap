@@ -18,7 +18,6 @@ export default function HomePage({ isAdmin: isAdminProp }) {
   const dispatch = useDispatch()
   const [filter, setFilter] = useState('all')
   const [showLoginModal, setShowLoginModal] = useState(false)
-  const [minLoadingTimePassed, setMinLoadingTimePassed] = useState(false)
 
   useEffect(() => {
     if (status === 'idle') {
@@ -26,14 +25,6 @@ export default function HomePage({ isAdmin: isAdminProp }) {
     }
   }, [status, dispatch])
 
-  // Ensure loading screen shows for at least 2 seconds
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setMinLoadingTimePassed(true)
-    }, 2000)
-
-    return () => clearTimeout(timer)
-  }, [])
 
   // Get only top-level tasks (no parent)
   const topLevelTodos = todos.filter(t => t.parentId === null)
@@ -54,7 +45,7 @@ export default function HomePage({ isAdmin: isAdminProp }) {
   const progressPercent = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0
 
   // Show loading screen if data is loading OR minimum time hasn't passed
-  if (status === 'loading' || !minLoadingTimePassed) {
+  if (status === 'loading') {
     return <LoadingSpinner />
   }
 
