@@ -1,33 +1,15 @@
 const Task = require('../models/Task');
 
-<<<<<<< HEAD
-const seedTasks = async () => {
-    try {
-        // Check if tasks already exist
-        const existingTasks = await Task.countDocuments();
-        
-        if (existingTasks > 0) {
-            console.log(`✅ Database already has ${existingTasks} tasks. Skipping seed.`);
-            return;
-        }
-
-        console.log('🌱 Database is empty. Seeding initial tasks...');
-        
-=======
 const seedTasksForUser = async (userId) => {
     try {
         console.log(`🌱 Seeding initial tasks for user: ${userId}`);
 
->>>>>>> 828ddaa (Added Login page)
         let order = 0;
 
         // Helper to add task
         const addTask = async (text, parentId = null, isExpanded = false) => {
             const task = await Task.create({
-<<<<<<< HEAD
-=======
                 userId,
->>>>>>> 828ddaa (Added Login page)
                 text,
                 completed: false,
                 parentId: parentId,
@@ -188,17 +170,6 @@ const seedTasksForUser = async (userId) => {
         await addTask('Final Project B: Full-Stack Microservices - Docker + Kubernetes', week11Id);
         await addTask('Final Project B: Full-Stack Microservices - Full CI/CD', week11Id);
 
-<<<<<<< HEAD
-        const totalTasks = await Task.countDocuments();
-        console.log(`✅ Seeded ${totalTasks} tasks successfully`);
-    } catch (err) {
-        console.error('❌ Seeding Error:', err);
-        throw err; // Re-throw so caller can handle it
-    }
-};
-
-module.exports = seedTasks;
-=======
         const userTasks = await Task.countDocuments({ userId });
         console.log(`✅ Seeded ${userTasks} tasks for user ${userId}`);
     } catch (err) {
@@ -208,5 +179,3 @@ module.exports = seedTasks;
 };
 
 module.exports = seedTasksForUser;
-
->>>>>>> 828ddaa (Added Login page)

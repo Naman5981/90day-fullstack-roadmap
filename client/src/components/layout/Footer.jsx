@@ -1,21 +1,5 @@
 export default function Footer() {
   return (
-<<<<<<< HEAD
-    <footer className="text-sm text-gray-600 mt-8 bg-white p-4 rounded-lg shadow-sm">
-      <div className="mb-2">
-        <strong>💡 Tips:</strong>
-      </div>
-      <ul className="list-disc list-inside space-y-1 text-gray-600">
-        <li>Click the chevron icon to expand/collapse week tasks</li>
-        <li>Double-click any task to edit it</li>
-        <li>Your progress is saved to the database - access from any device! ☁️</li>
-        <li>Track shows completed subtasks for each week</li>
-      </ul>
-    </footer>
-  )
-}
-
-=======
     <footer className="mt-12 text-center relative z-10">
       <div className="glass-dark rounded-2xl p-6 backdrop-blur-xl">
         <div className="mb-4">
@@ -50,4 +34,3 @@ export default function Footer() {
     </footer>
   );
 }
->>>>>>> 828ddaa (Added Login page)

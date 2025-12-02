@@ -14,11 +14,7 @@ const apiClient = axios.create({
 // Add request interceptor to include auth token
 apiClient.interceptors.request.use(
   (config) => {
-<<<<<<< HEAD
-    const token = localStorage.getItem('adminToken');
-=======
     const token = localStorage.getItem('authToken');
->>>>>>> 828ddaa (Added Login page)
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
@@ -29,12 +25,6 @@ apiClient.interceptors.request.use(
   }
 );
 
-<<<<<<< HEAD
-// Public routes (read-only)
-export const fetchTasks = () => apiClient.get('/tasks');
-
-// Admin routes (require authentication)
-=======
 // Add response interceptor to handle auth errors
 apiClient.interceptors.response.use(
   (response) => response,
@@ -51,16 +41,9 @@ apiClient.interceptors.response.use(
 
 // All routes now require authentication
 export const fetchTasks = () => apiClient.get('/tasks');
->>>>>>> 828ddaa (Added Login page)
 export const createTask = (task) => apiClient.post('/tasks', task);
 export const updateTask = (id, updates) => apiClient.put(`/tasks/${id}`, updates);
 export const deleteTask = (id) => apiClient.delete(`/tasks/${id}`);
 export const toggleTaskCompletion = (id) => apiClient.patch(`/tasks/${id}/toggle`);
 export const toggleTaskExpanded = (id) => apiClient.patch(`/tasks/${id}/expand`);
 export const clearCompletedTasks = () => apiClient.delete('/tasks/action/clear-completed');
-<<<<<<< HEAD
-
-// Admin auth
-export const adminLogin = (password) => apiClient.post('/admin/login', { password });
-=======
->>>>>>> 828ddaa (Added Login page)

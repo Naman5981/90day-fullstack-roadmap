@@ -1,16 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const taskRoutes = require('./taskRoutes');
-<<<<<<< HEAD
-const adminRoutes = require('./adminRoutes');
-
-// Mount routes
-router.use('/tasks', taskRoutes);
-router.use('/admin', adminRoutes);
-
-module.exports = router;
-
-=======
 const authRoutes = require('./auth');
 const authMiddleware = require('../middleware/authMiddleware');
 
@@ -21,4 +11,3 @@ router.use('/auth', authRoutes);
 router.use('/tasks', authMiddleware, taskRoutes);
 
 module.exports = router;
->>>>>>> 828ddaa (Added Login page)

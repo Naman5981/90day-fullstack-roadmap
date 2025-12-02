@@ -1,0 +1,91 @@
+﻿
+> todo-app@1.0.0 build
+> vite build
+
+node.exe : [33mThe CJS 
+build of Vite's Node API is 
+deprecated. See https://vite
+.dev/guide/troubleshooting.h
+tml#vite-cjs-node-api-deprec
+ated for more details.[39m
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" "C:\U
+sers\Naman\AppData\Roaming\ 
+...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
+    + CategoryInfo          
+    : NotSpecified: ([33m  
+  The CJS bu...e details.   
+ [39m:String) [], Remot    
+eException
+    + FullyQualifiedErrorId 
+    : NativeCommandError
+ 
+[36mvite v5.4.21 [32mbuilding for production...[36m[39m
+transforming...
+[32m✓[39m 44 modules transformed.
+[31mx[39m Build failed in 
+1.15s
+[31merror during build:
+[31m[vite:esbuild] 
+Transform failed with 1 
+error:
+C:/Users/Naman/OneDrive/Desk
+top/roadmap-todo-app/client/
+src/pages/HomePage.jsx:1:0: 
+ERROR: Unexpected "<<"[31m
+file: [36mC:/Users/Naman/On
+eDrive/Desktop/roadmap-todo-
+app/client/src/pages/HomePag
+e.jsx:1:0[31m
+[33m
+[33mUnexpected "<<"[33m
+1  |  <<<<<<< HEAD
+   |  ^
+2  |  import { useState, 
+useEffect } from 'react'
+3  |  import { useSelector, 
+useDispatch } from 
+'react-redux'
+[31m
+    at failureErrorWithLog (
+C:\Users\Naman\OneDrive\Desk
+top\roadmap-todo-app\client\
+node_modules\esbuild\lib\mai
+n.js:1472:15)
+    at C:\Users\Naman\OneDri
+ve\Desktop\roadmap-todo-app\
+client\node_modules\esbuild\
+lib\main.js:755:50
+    at responseCallbacks.<co
+mputed> (C:\Users\Naman\OneD
+rive\Desktop\roadmap-todo-ap
+p\client\node_modules\esbuil
+d\lib\main.js:622:9)
+    at handleIncomingPacket 
+(C:\Users\Naman\OneDrive\Des
+ktop\roadmap-todo-app\client
+\node_modules\esbuild\lib\ma
+in.js:677:12)
+    at 
+Socket.readFromStdout (C:\Us
+ers\Naman\OneDrive\Desktop\r
+oadmap-todo-app\client\node_
+modules\esbuild\lib\main.js:
+600:7)
+    at Socket.emit 
+(node:events:518:28)
+    at addChunk (node:intern
+al/streams/readable:561:12)
+    at readableAddChunkPushB
+yteMode (node:internal/strea
+ms/readable:512:3)
+    at Readable.push (node:i
+nternal/streams/readable:392
+:5)
+    at Pipe.onStreamRead (no
+de:internal/stream_base_comm
+ons:189:23)[39m
